@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:streamvideo="clr-namespace:StreamVideo"
+            x:Class="StreamVideo.HomePage" BarTextColor="White"  BarBackgroundColor="#f20424">
+    <streamvideo:NowPlayingPage  Title="Now Playing Movies"></streamvideo:NowPlayingPage>
+    <streamvideo:UpCmingMoviesPage  Title="Up Coming Movies"></streamvideo:UpCmingMoviesPage>
+</TabbedPage>
