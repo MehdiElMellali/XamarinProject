@@ -49,18 +49,18 @@ namespace StreamVideo
         private void MovieListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 
-            //if (((ListView)sender).SelectedItem == null)
-            //    return;
-            ////Do stuff here with the SelectedItem ...
+            if (((ListView)sender).SelectedItem == null)
+                return;
+            //Do stuff here with the SelectedItem ...
 
-           // var selectedItem = e.SelectedItem as NowPlaying;
+            var selectedItem = e.SelectedItem as NowPlaying;
 
-           // if (selectedItem != null)
-           // {
-           //     var id = selectedItem.MovieId;
-           //     Navigation.PushAsync(new Details(id));
-           // }
-           //((ListView)sender).SelectedItem = null;
+            if (selectedItem != null)
+            {
+                var id = selectedItem.MovieId;
+                Navigation.PushAsync(new MovieDetails(id));
+            }
+            ((ListView)sender).SelectedItem = null;
 
         }
     }

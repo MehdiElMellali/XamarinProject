@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StreamVideo.TraillorPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <WebView x:Name="browser" VerticalOptions="Fill" 
+                     HorizontalOptions="Fill"
+                     Source="http://xamarin.com"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

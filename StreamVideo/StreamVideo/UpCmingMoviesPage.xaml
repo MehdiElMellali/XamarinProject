@@ -2,11 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StreamVideo.UpCmingMoviesPage">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+
+        <StackLayout x:Name="SLMovies" IsVisible="False" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+            <ListView x:Name="MovieListView" HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding PhotoFullPath}" Grid.Column="0" HeightRequest="100" WidthRequest="150"/>
+                                    <StackLayout Grid.Column="1">
+                                        <Label Text="{Binding MovieName}"  TextColor="#E91E63" FontAttributes="Bold"/>
+                                        <Label Text="{Binding ReleaseDate}"/>
+                                        <Label Text="{Binding MovieType}"/>
+                                        <Label Text="{Binding RatedPGI}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
+        <StackLayout x:Name="SLLoader" IsVisible="True" Padding="12"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+
+            <ActivityIndicator IsRunning="True" Color ="#80000000"/>
+
+            <Label Text="Loading..." HorizontalOptions="Center" TextColor="Red"/>
+
+        </StackLayout>
+    </AbsoluteLayout>
+
     </ContentPage.Content>
 </ContentPage>
